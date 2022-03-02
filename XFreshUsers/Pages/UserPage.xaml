@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<freshmvvm:FreshBaseContentPage xmlns:freshmvvm="clr-namespace:FreshMvvm;assembly=FreshMvvm"
+                                xmlns="http://xamarin.com/schemas/2014/forms"
+                                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                x:Class="XFreshUsers.Pages.UserPage">
+    <ContentPage.Content>
+        <StackLayout Padding="15" Spacing="5">
+            <Label Text="Username" />
+            <Entry Text="{Binding UserName}" />
+            <Label Text="Contraseña" />
+            <Entry Text="{Binding UserPassWord}" IsPassword="True" />
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                <Label Text="Administrador" />
+                <CheckBox IsChecked="{Binding UserIsAdmin}" />
+            </StackLayout>
+            <Button Text="Save" Command="{Binding SaveCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</freshmvvm:FreshBaseContentPage>

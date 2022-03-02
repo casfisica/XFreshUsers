@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<freshmvvm:FreshBaseContentPage  xmlns:freshmvvm="clr-namespace:FreshMvvm;assembly=FreshMvvm"
+                                 xmlns="http://xamarin.com/schemas/2014/forms"
+                                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                 x:Class="XFreshUsers.Pages.UserListPage">
+
+    <freshmvvm:FreshBaseContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddUserCommand}" />
+    </freshmvvm:FreshBaseContentPage.ToolbarItems>
+    <ListView ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUser}">
+        <ListView.ItemTemplate >
+            <DataTemplate>
+                <TextCell Text="{Binding Name}" Detail="{Binding IsAdmin}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+</freshmvvm:FreshBaseContentPage>
