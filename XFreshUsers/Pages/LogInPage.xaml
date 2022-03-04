@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<freshmvvm:FreshBaseContentPage xmlns:freshmvvm="clr-namespace:FreshMvvm;assembly=FreshMvvm"
+                                xmlns="http://xamarin.com/schemas/2014/forms"
+                                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                x:Class="XFreshUsers.Pages.LogInPage">
+    <StackLayout Padding="15" 
+                 VerticalOptions="Center"
+                 Spacing="20">
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="LogIn" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+            <Label Text="       Usuario: " 
+                   FontSize="Medium" 
+                   HorizontalOptions="End"/>
+            <Entry HorizontalOptions="FillAndExpand"
+                   Text="{Binding UserName, Mode=TwoWay}"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+            <Label Text="Contraseña:"  
+                   FontSize="Medium"/>
+            <Entry IsPassword="True" 
+                   HorizontalOptions="FillAndExpand" 
+                   Text="{Binding PassWord, Mode=TwoWay}"/>
+        </StackLayout>
+        <Button Text="Entrar" Padding="10" Command="{Binding LogIngCommand}"/>
+    </StackLayout>
+    
+</freshmvvm:FreshBaseContentPage>

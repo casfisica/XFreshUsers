@@ -8,11 +8,15 @@ namespace XFreshUsers
 {
     public partial class App : Application
     {
+        public static bool isAdmin;
         public App()
         {
+
+            isAdmin = false;
+
             InitializeComponent();
 
-            var page = FreshPageModelResolver.ResolvePageModel<UserListPageModel>();
+            var page = FreshPageModelResolver.ResolvePageModel<LogInPageModel>();
             var navContainer = new FreshNavigationContainer(page);
             MainPage = navContainer;
 

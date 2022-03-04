@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<freshmvvm:FreshBaseContentPage  xmlns:freshmvvm="clr-namespace:FreshMvvm;assembly=FreshMvvm"
+                                 xmlns="http://xamarin.com/schemas/2014/forms"
+                                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                 x:Class="XFreshUsers.Pages.MainPage"
+                                 Title="Pagina Principal">
+    <ContentPage.Content>
+        <StackLayout Padding="15"
+                     VerticalOptions="Center"
+                     Spacing="10">
+
+            <Button Text="Otras Opciones"/>
+            
+            <Button Text="Configurar" 
+                    Command="{Binding GoToConfigCommand}"
+                    IsEnabled="{Binding IsAdmin}"/>
+            <Button Text="Salir" 
+                    Command="{Binding SalirCommand}"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</freshmvvm:FreshBaseContentPage>

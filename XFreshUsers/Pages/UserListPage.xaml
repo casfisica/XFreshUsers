@@ -5,7 +5,9 @@
                                  x:Class="XFreshUsers.Pages.UserListPage">
 
     <freshmvvm:FreshBaseContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Command="{Binding AddUserCommand}" />
+        <ToolbarItem Text="Add" 
+                     Command="{Binding AddUserCommand}" 
+                     IsDestructive="False"/>
     </freshmvvm:FreshBaseContentPage.ToolbarItems>
     <ListView ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUser}">
         <ListView.ItemTemplate >

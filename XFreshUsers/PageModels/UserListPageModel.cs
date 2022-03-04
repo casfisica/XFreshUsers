@@ -15,6 +15,15 @@ namespace XFreshUsers.PageModels
         private Repository _repository = FreshIOC.Container.Resolve<Repository>();
         private User _selectedUser = null;
 
+        private bool isAdmin;
+
+        public bool IsAdmin
+        {
+            get { return isAdmin; }
+            set { isAdmin = value; RaisePropertyChanged(); }
+        }
+
+
         /// <summary>
         /// Collection used for binding to the Page's user list view.
         /// </summary>
@@ -36,6 +45,7 @@ namespace XFreshUsers.PageModels
 
         public UserListPageModel()
         {
+            isAdmin = App.isAdmin;
             Users = new ObservableCollection<User>();
         }
 
@@ -45,6 +55,7 @@ namespace XFreshUsers.PageModels
         /// </summary>
         public override void Init(object initData)
         {
+            isAdmin = App.isAdmin;
             LoadUsers();
             if (Users.Count() < 1)
             {
@@ -103,7 +114,7 @@ namespace XFreshUsers.PageModels
             getUserTask.Wait();
             foreach (var user in getUserTask.Result)
             {
-                if (user.Name == "root") return;
+                if (user.Name == "root") continue;
                 Users.Add(user);
             }
         }

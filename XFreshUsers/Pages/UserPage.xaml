@@ -13,7 +13,7 @@
                 <Label Text="Administrador" />
                 <CheckBox IsChecked="{Binding UserIsAdmin}" />
             </StackLayout>
-            <Button Text="Save" Command="{Binding SaveCommand}" />
+            <Button Text="Save" Command="{Binding SaveCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </freshmvvm:FreshBaseContentPage>
