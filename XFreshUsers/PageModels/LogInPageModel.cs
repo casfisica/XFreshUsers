@@ -21,7 +21,9 @@ namespace XFreshUsers.PageModels
             get { return userName; }
             set { userName = value; RaisePropertyChanged(); }
         }
-
+        /// <summary>
+        /// Used to pass the value to isAdmin gloval variable. 
+        /// </summary>
         private string passWord;
 
         public string PassWord
